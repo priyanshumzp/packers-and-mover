@@ -26,7 +26,11 @@ export default function WhyChooseUs() {
             </div>
           </div>
           <div className="relative h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden">
-            <img src="/happy-customers-moving-day.jpg" alt="Customer satisfaction" className="w-full h-full object-cover" />
+            <img
+              src="/happy-customers-moving-day.jpg"
+              alt="Customer satisfaction"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

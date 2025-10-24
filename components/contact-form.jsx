@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Mail, Phone, MapPin } from "lucide-react"
 
@@ -18,7 +16,7 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({
       ...prev,
@@ -26,7 +24,7 @@ export default function ContactForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData)
