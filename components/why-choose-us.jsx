@@ -1,37 +1,53 @@
-import { CheckCircle2 } from "lucide-react"
+import { Shield, Clock, DollarSign, Users } from "lucide-react"
 
-const reasons = [
-  "Licensed and insured professionals",
-  "Over 15 years of industry experience",
-  "Transparent pricing with no hidden fees",
-  "Available 24/7 customer support",
-  "Eco-friendly packing materials",
-  "Real-time tracking of your shipment",
+const features = [
+  {
+    icon: Shield,
+    title: "Fully Insured",
+    description: "Complete coverage for peace of mind",
+  },
+  {
+    icon: Clock,
+    title: "24/7 Support",
+    description: "Always here when you need us",
+  },
+  {
+    icon: DollarSign,
+    title: "Transparent Pricing",
+    description: "No hidden fees, ever",
+  },
+  {
+    icon: Users,
+    title: "Expert Team",
+    description: "10+ years of experience",
+  },
 ]
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 md:py-32 bg-secondary/30">
+    <section className="py-20 md:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Why Choose Swift Movers?</h2>
-            <div className="space-y-4">
-              {reasons.map((reason, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={24} />
-                  <p className="text-lg text-foreground">{reason}</p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why Choose Swift Movers?</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Experience the difference of working with true moving professionals
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon
+            return (
+              <div key={index} className="flex flex-col items-center text-center">
+                {/* Gradient icon background */}
+                <div className="mb-6 p-6 rounded-2xl bg-gradient-to-br from-primary via-primary/80 to-accent shadow-lg">
+                  <Icon className="text-white" size={32} />
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden">
-            <img
-              src="/happy-customers-moving-day.jpg"
-              alt="Customer satisfaction"
-              className="w-full h-full object-cover"
-            />
-          </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground">{feature.description}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
